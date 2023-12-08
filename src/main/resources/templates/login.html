@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+            rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/styleForm.css">
+    <style>
+        form .invalid-feedback {
+            display: block;
+        }
+    </style>
+    <style>
+        /* Estilo para separar los campos del formulario */
+        .form-group {
+            margin-bottom: 10px; /* Agrega un margen inferior de 10px entre los campos */
+        }
+
+        /* Estilo para hacer más grandes los títulos */
+        .form-label {
+            font-size: 15px; /* Tamaño de fuente personalizado para los títulos */
+            display: block;
+        }
+
+        /* Estilo para hacer más grandes los cuadros de texto */
+        .form-control {
+            width: 100%; /* Ancho al 100% del contenedor */
+        }
+
+        /* Estilo para el botón */
+        .btn-primary {
+            background-color: #c7c7c7; /* Fondo blanco */
+            color: #000; /* Texto negro */
+            transition: background-color 0.3s; /* Transición suave del color de fondo */
+            padding: 15px 30px;
+            font-size: 18px; /* Cambia el tamaño del texto */
+        }
+
+        .btn-primary:hover {
+            background-color: #000; /* Cambia a fondo negro al pasar el cursor por encima */
+            color: white; /* Texto blanco cuando el cursor está encima */
+        }
+        .form-control {
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            white-space: pre-line; /* Preserva espacios y saltos de línea */
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo"> WΔKΔNĐΔ </a>
+    <nav class="navbar">
+        <a href="/home">Inicio</a>
+        <a href="/home/juegos/">Juegos</a>
+        <a href="/admin">administración</a>
+    </nav>
+    <div class="icons">
+        <div id="user-btn" class="fas fa-user"> <a href="#" class="logo"> |Admin </a></div>
+        <div id="user-dropdown" class="user-dropdown">
+            <a th:href="@{/logout}">Cerrar Sesión</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="game-info">
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <h5 class="mb-3">Login</h5>
+                    <label for="username">Username:</label> <input type="text"
+                                                                   name="username" id="username" class="form-control mb-2" required></input>
+                    <label for="password">Password:</label> <input name="password"
+                                                                   id="password" type="password" class="form-control mb-2" required></input>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Iniciar Sesi&oacute;n</button>
+                <br> <a th:href="@{/users/new}">Registrarme</a>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+    </section>
+    </main>
+</body>
+</html>
+
